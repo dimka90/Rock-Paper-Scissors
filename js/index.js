@@ -12,6 +12,52 @@ let getComputerChoice=()=>{
 }
 
 
+let playgame=(playerSelection,computerSelection)=>{
+    let userChoice=playerSelection.toUpperCase();
+    let computerchoice=computerSelection.toUpperCase();
+   
+
+    let rock="ROCK";
+    let paper="PAPPER";
+    let scissors="SCISSORS";
+
+    if(userChoice==computerchoice){
+       
+
+        return "There was a tie, try again";
+
+    }
+    else if((userChoice==rock) && (computerchoice==paper)){
+        return "You loose,Paper covers Rock";
+
+    }
+    else if((userChoice==rock) && (computerchoice==scissors)){
+        return "You WIN,Rock breaks Scissor";
+
+    }
+    else if((userChoice==paper) && (computerchoice==rock)){
+        return "You win,Paper covers  Rock";
+
+    }
+    else if((userChoice==scissors) && (computerchoice==rock)){
+        return "You loose,Rocks breaks  Scissors";
+
+    }
+    else if((userChoice==paper) && (computerchoice==scissors)){
+        return "You loose,Scissors cuts paper";
+
+    }
+    else if((userChoice==scissors) && (computerchoice==paper)){
+        return "You win,Scissors cuts paper";
+
+    }
+
+
+
+}
+let userChoice="scissors";
+
+console.log(playgame(userChoice,getComputerChoice()))
 
 // console.log(getComputerChoice())
 
