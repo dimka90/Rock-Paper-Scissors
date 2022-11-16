@@ -1,0 +1,34 @@
+array=['Rock','Paper','Scissor']
+Expected outcome
+1.draw
+2.Win
+3.Loose
+
+if userinput==computerchoice:
+there was a draw
+=====user choice of Rock=====
+if userinput==Rock and computerchoice==Paper:
+user loose cause Paper covers Rock
+if userinput==ROck and computerchoice==Scissor:
+user win cause Rock breaks Scissor
+====computerchoice of rock=====
+if userinput==Paper and computerchoice==Rock:
+user win cause Paper covers Rock
+if userinput==Scissor  and computerchoice==ROck:
+user loose cause Rock breaks Scissor
+
+===userchoice of Paper====
+
+if userchoice==Paper and computerchoice==Scissor:
+you loose, Scissor cut Paper
+
+===computerchoice of Paper===
+if userchoice==Scissor and computerchoice==Paper
+you win, Scissor cut Paper
+
+
+
+
+
+
+
