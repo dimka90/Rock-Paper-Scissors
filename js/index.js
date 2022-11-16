@@ -6,7 +6,7 @@
 // }
 function getComputerChoice()
 {
-    let choice=["Rock","Papper","Scissor"];
+    let choice=["Rock","Papper","Scissors"];
         const userChoice= choice[Math.floor(Math.random()*3)];
         return userChoice;
         
