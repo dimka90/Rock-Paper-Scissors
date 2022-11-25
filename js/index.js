@@ -4,6 +4,24 @@
 //         const userChoice= choice[Math.floor(Math.random()*3)];
 //         return userChoice;
 // }
+const container=document.querySelector('#container');
+const answer=document.createElement('p');
+
+
+container.appendChild(answer);
+const allBtn=document.querySelectorAll('button');
+allBtn.forEach((button)=>{
+    button.addEventListener('click',()=>{
+// alert(button.id);
+// answer.textContent=button.id;
+const c=button.id.toUpperCase();
+// if (c=="ROCK"){
+//     answer.textContent="ROck beats siccors";
+
+// }
+});
+
+});
 function getComputerChoice()
 {
     let choice=["Rock","Papper","Scissors"];
@@ -12,44 +30,61 @@ function getComputerChoice()
         
 }
 
-function playRound(playerSelection,computerSelection)
+function playRound(userChoice,computerSelection)
 {
-    let userChoice=playerSelection.toUpperCase();
+    const container=document.querySelector('#container');
+    const answer=document.querySelector(".useranswer");
+    // const answer=document.createElement('p');
+    // container.appendChild(answer);
+    // let userChoice=playerSelection.toUpperCase();
     let computerchoice=computerSelection.toUpperCase();
    
 
     let rock="ROCK";
     let paper="PAPPER";
     let scissors="SCISSORS";
+    const userScore=0;
+    let computerScore=0;
 
     if(userChoice==computerchoice){
        
+// const answer=document.getElementById("#answer");
+// answer.textContent="There was a tie";
 
-        return "There was a tie, try again";
+        // return "There was a tie, try again";
+         return answer.textContent="There was tie,try again";
 
     }
     else if((userChoice==rock) && (computerchoice==paper)){
-        return "You loose,Paper covers Rock";
+        computerScore+=1;
+        console.log(computerScore)
+        return answer.textContent="You loose,Paper covers Rock";
 
     }
     else if((userChoice==rock) && (computerchoice==scissors)){
-        return "You WIN,Rock breaks Scissor";
+        return answer.textContent="You WIN,Rock breaks Scissor";
 
     }
     else if((userChoice==paper) && (computerchoice==rock)){
-        return "You win,Paper covers  Rock";
+        return answer.textContent="You win,Paper covers  Rock";
 
     }
     else if((userChoice==scissors) && (computerchoice==rock)){
-        return "You loose,Rocks breaks  Scissors";
+
+        computerScore=+1;
+        console.log(computerScore)
+        return answer.textContent="You loose,Rocks breaks  Scissors";
+       
 
     }
     else if((userChoice==paper) && (computerchoice==scissors)){
-        return "You loose,Scissors cuts paper";
+        computerScore=computerScore+1;
+        console.log(computerScore)
+        return answer.textContent="You loose,Scissors cuts paper";
 
     }
     else if((userChoice==scissors) && (computerchoice==paper)){
-        return "You win,Scissors cuts paper";
+        return answer.textContent="You win,Scissors cuts paper";
 
     }
 
@@ -57,10 +92,20 @@ function playRound(playerSelection,computerSelection)
 
 }
 function game(){
-    for(i=0; i<5;i++){
-const userinput=prompt("Select Rock,Papper or Scissors");
-console.log(playRound(userinput,getComputerChoice()));
-    }
+   
+    const allBtn=document.querySelectorAll('button');
+    allBtn.forEach((button)=>{
+    button.addEventListener('click',()=>{
+    const user=button.id.toUpperCase();
+    playRound(user,getComputerChoice());
+    
+});
+
+});
+//     for(i=0; i<5;i++){
+// const userinput=prompt("Select Rock,Papper or Scissors");
+// console.log(playRound(userinput,getComputerChoice()));
+    // }
 }
 game();
 

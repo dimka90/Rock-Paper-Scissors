@@ -27,6 +27,8 @@ if userchoice==Scissor and computerchoice==Paper
 you win, Scissor cut Paper
 
 
+using buttons
+
 
 
 
