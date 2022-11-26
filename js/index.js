@@ -39,6 +39,10 @@ function playRound(userChoice,computerSelection)
     // let userChoice=playerSelection.toUpperCase();
     let computerchoice=computerSelection.toUpperCase();
    
+    let cschoice=document.querySelector(".computerchoice");
+    let uschoice=document.querySelector(".userchoice");
+    cschoice.textContent="computer:"+computerchoice;
+    uschoice.textContent="Your choice:"+userChoice;
 
     let rock="ROCK";
     let paper="PAPPER";
@@ -58,11 +62,11 @@ function playRound(userChoice,computerSelection)
     else if((userChoice==rock) && (computerchoice==paper)){
         computerScore+=1;
         console.log(computerScore)
-        return answer.textContent="You loose,Paper covers Rock";
+        return answer.textContent="You win,Paper covers Rock";
 
     }
     else if((userChoice==rock) && (computerchoice==scissors)){
-        return answer.textContent="You WIN,Rock breaks Scissor";
+        return answer.textContent="You win,Rock breaks Scissor";
 
     }
     else if((userChoice==paper) && (computerchoice==rock)){
@@ -94,14 +98,23 @@ function playRound(userChoice,computerSelection)
 function game(){
    
     const allBtn=document.querySelectorAll('button');
+    let dcount=document.querySelector(".count");
+    let  count=0;
+   
+   
     allBtn.forEach((button)=>{
     button.addEventListener('click',()=>{
     const user=button.id.toUpperCase();
+    count+=1
+   
     playRound(user,getComputerChoice());
-    
+    dcount.textContent="Round: "+count;
+ 
 });
+    
 
 });
+
 //     for(i=0; i<5;i++){
 // const userinput=prompt("Select Rock,Papper or Scissors");
 // console.log(playRound(userinput,getComputerChoice()));
